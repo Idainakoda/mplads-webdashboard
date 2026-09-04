@@ -10,6 +10,7 @@ import {
     Sprout,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import parliamentImage from "../../images/footer-image.jpg";
 
 const roles = [
     {
@@ -92,7 +93,7 @@ function RoleSelection() {
                 className={`relative min-h-screen bg-cover bg-center flex flex-col transition-all duration-1000 ${showHero ? "opacity-100" : "opacity-0"
                     }`}
                 style={{
-                    backgroundImage: "url('/src/images/parliament.png')",
+                    backgroundImage: `url(${parliamentImage})`,
                 }}
             >
                 <div className="absolute inset-0 bg-linear-to-r from-black/65 via-black/35 to-black/20" />
