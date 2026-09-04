@@ -61,7 +61,7 @@ function Login() {
                                         Government of India
                                     </p>
                                     <p className="text-sm text-white/70">
-                                        Prototype Implementation
+                                        Prototype
                                     </p>
                                 </div>
                             </div>
