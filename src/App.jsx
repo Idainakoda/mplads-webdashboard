@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import RoleSelection from "./pages/RoleSelection";
 import Login from "./pages/Login";
 import MinistryDashboard from "./pages/MinistryDashboard";
@@ -9,7 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<RoleSelection />} />
@@ -31,7 +31,7 @@ function App() {
           element={<MPDashboard />}
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
