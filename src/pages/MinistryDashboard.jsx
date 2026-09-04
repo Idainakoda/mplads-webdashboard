@@ -17,10 +17,10 @@ function MinistryDashboard() {
     return (
         <DashboardLayout
             sidebarItems={ministrySidebar}
-            role="Ministry Authority"
+            role="Central Authority"
             title="National Dashboard"
             subtitle="MPLADS monitoring across India"
-            userName="Ministry Administrator"
+            userName="Central Administrator"
             onLogout={handleLogout}
         >
             <div className="space-y-8">

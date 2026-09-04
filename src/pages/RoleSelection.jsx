@@ -15,7 +15,7 @@ import parliamentImage from "../images/parliament.png";
 const roles = [
     {
         id: "ministry",
-        title: "Ministry Authority",
+        title: "Central Authority",
         description: "National overview, policy monitoring and analytics",
         icon: Landmark,
         className: "ministry-card",
@@ -107,7 +107,7 @@ function RoleSelection() {
                                 }`}
                         >
                             <p className="text-white/90 tracking-[0.35em] text-xs md:text-sm uppercase mb-5">
-                                Transparent Funds. Stronger Communities. A Developed India.
+                                Transparent Funds. Stronger Communities. Developed India.
                             </p>
 
                             <div className="flex items-center gap-1 mb-7">
@@ -250,7 +250,7 @@ function RoleSelection() {
 
                         <div className="hidden md:block text-sm text-slate-500">
                             <p>Ministry of Statistics & Programme Implementation</p>
-                            <p>Government of India</p>
+                            <p>Prototype Implementation</p>
                         </div>
                     </div>
 

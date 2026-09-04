@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import emblemImage from "../images/emblem.png";
 
 const roleNames = {
-    ministry: "Ministry Authority",
+    ministry: "Central Authority",
     state: "State Authority (SNA)",
     district: "District Authority",
     mp: "Member of Parliament",
