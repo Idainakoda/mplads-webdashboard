@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Lock, Mail, ArrowLeft, ShieldCheck } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
-import emblemImage from "../images/emblem.avif";
+import emblemImage from "../images/emblem.png";
 
 const roleNames = {
     ministry: "Ministry Authority",
