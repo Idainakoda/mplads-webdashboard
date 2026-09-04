@@ -32,7 +32,7 @@ const iconMap = {
 };
 
 const roleInfo = {
-    "Ministry Authority": {
+    "Central Authority": {
         location: "Government of India",
         lines: [
             "National MPLADS Monitoring",
@@ -70,53 +70,97 @@ const roleInfo = {
     },
 };
 
-function DashboardSidebar({ items, role, onLogout }) {
-    const info = roleInfo[role] || roleInfo["Ministry Authority"];
+function DashboardSidebar({
+    items,
+    role,
+    userName,
+    onLogout,
+    isOpen,
+    onClose,
+}) {
+    const info =
+        roleInfo[role] || roleInfo["Central Authority"];
 
     return (
-        <aside className="w-64 h-screen sticky top-0 bg-[#092d52] text-white flex flex-col shrink-0">
-            <div className="px-6 py-7 border-b border-white/10 shrink-0">
-                <h1 className="text-xl font-bold">
-                    MPLADS <span className="text-blue-300">Monitor</span>
-                </h1>
+        <>
+            <div
+                className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 lg:hidden ${
+                    isOpen
+                        ? "opacity-100 pointer-events-auto"
+                        : "opacity-0 pointer-events-none"
+                }`}
+                onClick={onClose}
+            />
 
-                <p className="text-xs text-white/50 mt-1">
-                    {role}
-                </p>
-            </div>
+            <aside
+                className={`fixed lg:sticky top-0 left-0 z-50 w-72 lg:w-64 h-screen bg-[#092d52] text-white flex flex-col shrink-0 transform transition-transform duration-300 ease-out lg:translate-x-0 ${
+                    isOpen ? "translate-x-0" : "-translate-x-full"
+                }`}
+            >
+                <div className="px-6 py-6 border-b border-white/10 shrink-0">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <h1 className="text-xl font-bold">
+                                MPLADS{" "}
+                                <span className="text-blue-300">
+                                    Monitor
+                                </span>
+                            </h1>
 
-            <nav className="flex-1 overflow-y-auto px-4 py-6 space-y-1">
-                {items.map((item) => {
-                    const Icon = iconMap[item.icon] || LayoutDashboard;
+                            <p className="text-xs text-white/50 mt-1">
+                                {role}
+                            </p>
+                        </div>
 
-                    return (
                         <button
-                            key={item.id}
-                            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-white/70 hover:bg-white/10 hover:text-white transition"
+                            onClick={onClose}
+                            className="lg:hidden w-9 h-9 rounded-lg hover:bg-white/10 flex items-center justify-center text-white/70 hover:text-white transition"
+                            aria-label="Close navigation"
                         >
-                            <Icon size={19} />
-                            <span>{item.label}</span>
+                            ×
                         </button>
-                    );
-                })}
+                    </div>
+                </div>
 
-            </nav>
+                <div className="px-5 py-5 border-b border-white/10 shrink-0 lg:hidden">
+                    <div className="flex items-center gap-3">
+                        <div className="w-11 h-11 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                            {userName?.charAt(0) || "A"}
+                        </div>
 
+                        <div className="min-w-0">
+                            <p className="text-sm font-semibold text-white truncate">
+                                {userName || "Administrator"}
+                            </p>
 
-            <div className="px-4 pb-5 pt-1">
-                <button
-                    onClick={onLogout}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-white/70 hover:bg-red-500/15 hover:text-red-300 transition"
-                >
-                    <LogOut size={19} />
-                    <span>Logout</span>
-                </button>
-            </div>
+                            <p className="text-xs text-white/50 mt-0.5">
+                                Authorized User
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-            <div className="shrink-0">
+                <nav className="flex-1 overflow-y-auto px-4 py-6 space-y-1">
+                    {items.map((item) => {
+                        const Icon =
+                            iconMap[item.icon] || LayoutDashboard;
+
+                        return (
+                            <button
+                                key={item.id}
+                                onClick={onClose}
+                                className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-white/70 hover:bg-white/10 hover:text-white transition"
+                            >
+                                <Icon size={19} />
+                                <span>{item.label}</span>
+                            </button>
+                        );
+                    })}
+                </nav>
+
                 <div className="relative shrink-0 overflow-hidden">
                     <div
-                        className="absolute inset-0 bg-cover bg-center opacity-100"
+                        className="absolute inset-0 bg-cover bg-center opacity-25"
                         style={{
                             backgroundImage: `url(${parliamentImage})`,
                         }}
@@ -130,9 +174,9 @@ function DashboardSidebar({ items, role, onLogout }) {
                         </p>
 
                         <div className="mt-1">
-                            {info.lines.map((line) => (
+                            {info.lines.map((line, index) => (
                                 <p
-                                    key={line}
+                                    key={`${line}-${index}`}
                                     className="text-xs text-white/70 leading-4"
                                 >
                                     {line}
@@ -141,8 +185,18 @@ function DashboardSidebar({ items, role, onLogout }) {
                         </div>
                     </div>
                 </div>
-            </div>
-        </aside>
+
+                <div className="px-4 pb-5 pt-1">
+                    <button
+                        onClick={onLogout}
+                        className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-white/70 hover:bg-red-500/15 hover:text-red-300 transition"
+                    >
+                        <LogOut size={19} />
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </aside>
+        </>
     );
 }
 
