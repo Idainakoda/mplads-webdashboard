@@ -10,7 +10,7 @@ import {
     Sprout,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import parliamentImage from "../../images/footer-image.jpg";
+import parliamentImage from "../../images/parliament.jpg";
 
 const roles = [
     {
