@@ -152,17 +152,6 @@ function RoleSelection() {
                     </div>
                 </div>
 
-                <div className="absolute right-8 lg:right-20 top-28 z-10 hidden lg:block max-w-xs text-white">
-                    <p className="font-serif italic text-xl leading-relaxed">
-                        “People's Participation
-                        <br />
-                        for a Developed
-                        <br />
-                        India.”
-                    </p>
-                    <p className="mt-4 text-sm">— MPLADS Monitor</p>
-                </div>
-
                 <button
                     onClick={scrollToRoles}
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-white group"
