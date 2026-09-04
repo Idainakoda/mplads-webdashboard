@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Lock, Mail, ArrowLeft, ShieldCheck } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import emblemImage from "../images/emblem.avif";
 
 const roleNames = {
     ministry: "Ministry Authority",
@@ -50,7 +51,7 @@ function Login() {
                         <div className="relative z-10">
                             <div className="flex items-center gap-4">
                                 <img
-                                    src="/src/images/emblem.png"
+                                    src={emblemImage}
                                     alt="Government of India Emblem"
                                     className="w-16 h-20 object-contain"
                                 />
