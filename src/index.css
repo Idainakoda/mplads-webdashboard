@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+/* =========================================================
+   MPLADS MONITOR LANDING PAGE
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ROLE CARDS
+========================================================= */
+
+.role-card {
+  position: relative;
+  min-height: 310px;
+  padding: 32px 25px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+
+
+/* Hover */
+
+.role-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(15, 45, 75, 0.18);
+}
+
+
+/* =========================================================
+   MINISTRY
+========================================================= */
+
+.ministry-card {
+  background:
+    linear-gradient(
+      145deg,
+      #1763a4,
+      #08477e
+    );
+
+  color: white;
+}
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+.state-card {
+  background:
+    linear-gradient(
+      145deg,
+      #d4f7e8,
+      #a8ead0
+    );
+
+  color: #083d31;
+}
+
+
+/* =========================================================
+   DISTRICT
+========================================================= */
+
+.district-card {
+  background:
+    linear-gradient(
+      145deg,
+      #e9dcff,
+      #d5c2f5
+    );
+
+  color: #351266;
+}
+
+
+/* =========================================================
+   MP
+========================================================= */
+
+.mp-card {
+  background:
+    linear-gradient(
+      145deg,
+      #fff0d8,
+      #ffe0b1
+    );
+
+  color: #4a2c0a;
+}
+
+
+/* =========================================================
+   ROLE ICON
+========================================================= */
+
+.role-icon {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease;
+}
+
+
+.role-card:hover .role-icon {
+  transform: scale(1.08);
+}
+
+
+/* Ministry icon */
+
+.ministry-card .role-icon {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* State icon */
+
+.state-card .role-icon {
+  background: rgba(0, 120, 80, 0.1);
+}
+
+
+/* District icon */
+
+.district-card .role-icon {
+  background: rgba(100, 40, 160, 0.1);
+}
+
+
+/* MP icon */
+
+.mp-card .role-icon {
+  background: rgba(230, 100, 0, 0.1);
+}
+
+
+/* =========================================================
+   ROLE ARROW
+========================================================= */
+
+.role-arrow {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+
+.role-card:hover .role-arrow {
+  transform: translateX(5px);
+}
+
+
+/* Ministry */
+
+.ministry-card .role-arrow {
+  background: white;
+  color: #1763a4;
+}
+
+
+/* State */
+
+.state-card .role-arrow {
+  background: #079b69;
+  color: white;
+}
+
+
+/* District */
+
+.district-card .role-arrow {
+  background: #5d16a6;
+  color: white;
+}
+
+
+/* MP */
+
+.mp-card .role-arrow {
+  background: #ff7900;
+  color: white;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .role-card {
+    min-height: 280px;
+  }
+
+}
