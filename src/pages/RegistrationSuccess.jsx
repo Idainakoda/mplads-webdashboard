@@ -71,7 +71,7 @@ function RegistrationSuccess() {
 
                         <div className="py-4">
                             <p className="text-sm sm:text-lg tracking-[0.2em] uppercase font-semibold text-[#092d52]">
-                                Account Pending Verification
+                                Account Verification  Pending
                             </p>
                         </div>
 
