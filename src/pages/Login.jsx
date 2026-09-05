@@ -202,10 +202,15 @@ function Login() {
                         </div>
 
                         <button
-                            onClick={() => console.log("Register clicked")}
-                            className="w-full border border-slate-300 text-slate-700 hover:border-blue-500 hover:text-blue-600 font-semibold py-3.5 rounded-xl transition"
+                            type="button"
+                            onClick={() =>
+                                navigate("/register", {
+                                    state: { role: selectedRole },
+                                })
+                            }
+                            className="text-blue-600 hover:text-blue-700 font-semibold"
                         >
-                            Create an Account
+                            Create an account
                         </button>
 
                         <p className="text-center text-xs text-slate-400 mt-8 leading-relaxed">
