@@ -6,6 +6,7 @@ import {
     mpSidebar,
     mpStats,
 } from "../data/mpDashboard";
+import ExpenditureOverview from "../components/dashboard/ExpenditureOverview";
 
 function MPDashboard() {
     const navigate = useNavigate();
@@ -90,33 +91,13 @@ function MPDashboard() {
                         </div>
                     </SectionCard>
 
-                    <SectionCard
-                        title="Expenditure Overview"
-                        subtitle="Constituency fund utilization"
-                    >
-                        <div className="h-64 flex items-center justify-center rounded-xl bg-slate-50">
-                            <div className="text-center">
-                                <p className="text-4xl font-bold text-[#092d52]">
-                                    ₹28.6 Cr
-                                </p>
-
-                                <p className="text-sm text-slate-400 mt-2">
-                                    Total funds utilized
-                                </p>
-
-                                <div className="mt-5 w-64 h-2 bg-slate-200 rounded-full overflow-hidden">
-                                    <div
-                                        className="h-full bg-emerald-500 rounded-full"
-                                        style={{ width: "85%" }}
-                                    />
-                                </div>
-
-                                <p className="text-xs text-slate-400 mt-2">
-                                    85% utilization
-                                </p>
-                            </div>
-                        </div>
-                    </SectionCard>
+                    <ExpenditureOverview
+                        title="Constituency Fund Utilization"
+                        subtitle="Utilization across recommended works"
+                        utilized={28.6}
+                        total={33.8}
+                        growth={6.1}
+                    />
                 </div>
 
                 <SectionCard

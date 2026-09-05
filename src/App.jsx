@@ -8,6 +8,7 @@ import MPDashboard from "./pages/MPDashboard";
 import ScrollToTop from "./components/ScrollToTop";
 import Registration from "./pages/Registration";
 import PageTransition from "./components/PageTransition";
+import RegistrationSuccess from "./pages/RegistrationSuccess";
 
 function App() {
   return (
@@ -44,6 +45,11 @@ function App() {
           path="/register"
           element={<Registration />}
         />
+        <Route
+          path="/registration-success"
+          element={<RegistrationSuccess />}
+        />
+
       </Routes>
     </HashRouter>
   );

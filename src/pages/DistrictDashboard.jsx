@@ -6,6 +6,7 @@ import {
     districtSidebar,
     districtStats,
 } from "../data/districtDashboard";
+import ExpenditureOverview from "../components/dashboard/ExpenditureOverview";
 
 function DistrictDashboard() {
     const navigate = useNavigate();
@@ -90,33 +91,13 @@ function DistrictDashboard() {
                         </div>
                     </SectionCard>
 
-                    <SectionCard
-                        title="Expenditure Overview"
-                        subtitle="District fund utilization"
-                    >
-                        <div className="h-64 flex items-center justify-center rounded-xl bg-slate-50">
-                            <div className="text-center">
-                                <p className="text-4xl font-bold text-[#092d52]">
-                                    ₹218 Cr
-                                </p>
-
-                                <p className="text-sm text-slate-400 mt-2">
-                                    Total funds utilized
-                                </p>
-
-                                <div className="mt-5 w-64 h-2 bg-slate-200 rounded-full overflow-hidden">
-                                    <div
-                                        className="h-full bg-emerald-500 rounded-full"
-                                        style={{ width: "80%" }}
-                                    />
-                                </div>
-
-                                <p className="text-xs text-slate-400 mt-2">
-                                    80% utilization
-                                </p>
-                            </div>
-                        </div>
-                    </SectionCard>
+                    <ExpenditureOverview
+                        title="District Fund Utilization"
+                        subtitle="District-wide MPLADS fund utilization"
+                        utilized={218}
+                        total={273}
+                        growth={3.6}
+                    />
                 </div>
 
                 <SectionCard

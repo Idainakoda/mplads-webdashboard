@@ -6,6 +6,7 @@ import {
     stateSidebar,
     stateStats,
 } from "../data/stateDashboard";
+import ExpenditureOverview from "../components/dashboard/ExpenditureOverview";
 
 function StateDashboard() {
     const navigate = useNavigate();
@@ -84,30 +85,13 @@ function StateDashboard() {
                         </div>
                     </SectionCard>
 
-                    <SectionCard
+                    <ExpenditureOverview
                         title="State Expenditure"
-                        subtitle="Fund utilization overview"
-                    >
-                        <div className="h-64 flex items-center justify-center rounded-xl bg-slate-50">
-                            <div className="text-center">
-                                <p className="text-4xl font-bold text-[#092d52]">
-                                    ₹1,184 Cr
-                                </p>
-                                <p className="text-sm text-slate-400 mt-2">
-                                    Total funds utilized
-                                </p>
-                                <div className="mt-5 w-64 h-2 bg-slate-200 rounded-full overflow-hidden">
-                                    <div
-                                        className="h-full bg-emerald-500 rounded-full"
-                                        style={{ width: "82%" }}
-                                    />
-                                </div>
-                                <p className="text-xs text-slate-400 mt-2">
-                                    82% utilization
-                                </p>
-                            </div>
-                        </div>
-                    </SectionCard>
+                        subtitle="State-wide MPLADS fund utilization"
+                        utilized={1184}
+                        total={1433}
+                        growth={4.8}
+                    />
                 </div>
 
                 <SectionCard

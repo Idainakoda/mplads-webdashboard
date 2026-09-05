@@ -58,12 +58,25 @@ function Registration() {
             return;
         }
 
+        const applicationId = `MPLADS-${new Date().getFullYear()}-${Math.floor(
+            100000 + Math.random() * 900000
+        )}`;
+
+        const submittedAt = new Date().toISOString();
+
         console.log("Registration data:", {
             role: selectedRole,
             ...formData,
         });
 
-        alert("Registration submitted successfully.");
+        navigate("/registration-success", {
+            state: {
+                role: selectedRole,
+                email: formData.email,
+                applicationId,
+                submittedAt,
+            },
+        });
     };
 
     return (
@@ -236,68 +249,68 @@ function Registration() {
                     {(selectedRole === "state" ||
                         selectedRole === "district" ||
                         selectedRole === "mp") && (
-                        <div className="mt-10 pt-8 border-t border-slate-100">
-                            <h2 className="text-lg font-bold text-[#092d52]">
-                                Role-Specific Information
-                            </h2>
+                            <div className="mt-10 pt-8 border-t border-slate-100">
+                                <h2 className="text-lg font-bold text-[#092d52]">
+                                    Role-Specific Information
+                                </h2>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-2">
-                                        State
-                                    </label>
-                                    <select
-                                        name="state"
-                                        value={formData.state}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 border border-slate-200 rounded-xl bg-white outline-none focus:ring-2 focus:ring-blue-500"
-                                    >
-                                        <option value="">
-                                            Select State
-                                        </option>
-                                        <option>Maharashtra</option>
-                                        <option>Uttar Pradesh</option>
-                                        <option>Karnataka</option>
-                                        <option>Madhya Pradesh</option>
-                                        <option>Bihar</option>
-                                    </select>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+                                    <div>
+                                        <label className="block text-sm font-medium text-slate-700 mb-2">
+                                            State
+                                        </label>
+                                        <select
+                                            name="state"
+                                            value={formData.state}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-3 border border-slate-200 rounded-xl bg-white outline-none focus:ring-2 focus:ring-blue-500"
+                                        >
+                                            <option value="">
+                                                Select State
+                                            </option>
+                                            <option>Maharashtra</option>
+                                            <option>Uttar Pradesh</option>
+                                            <option>Karnataka</option>
+                                            <option>Madhya Pradesh</option>
+                                            <option>Bihar</option>
+                                        </select>
+                                    </div>
+
+                                    {selectedRole === "district" && (
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-2">
+                                                District
+                                            </label>
+                                            <input
+                                                name="district"
+                                                value={formData.district}
+                                                onChange={handleChange}
+                                                required
+                                                placeholder="Enter district"
+                                                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+                                            />
+                                        </div>
+                                    )}
+
+                                    {selectedRole === "mp" && (
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-2">
+                                                Parliamentary Constituency
+                                            </label>
+                                            <input
+                                                name="constituency"
+                                                value={formData.constituency}
+                                                onChange={handleChange}
+                                                required
+                                                placeholder="Enter parliamentary constituency"
+                                                className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
-
-                                {selectedRole === "district" && (
-                                    <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-2">
-                                            District
-                                        </label>
-                                        <input
-                                            name="district"
-                                            value={formData.district}
-                                            onChange={handleChange}
-                                            required
-                                            placeholder="Enter district"
-                                            className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
-                                        />
-                                    </div>
-                                )}
-
-                                {selectedRole === "mp" && (
-                                    <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-2">
-                                            Parliamentary Constituency
-                                        </label>
-                                        <input
-                                            name="constituency"
-                                            value={formData.constituency}
-                                            onChange={handleChange}
-                                            required
-                                            placeholder="Enter parliamentary constituency"
-                                            className="w-full px-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
-                                        />
-                                    </div>
-                                )}
                             </div>
-                        </div>
-                    )}
+                        )}
 
                     <div className="mt-10 pt-8 border-t border-slate-100">
                         <h2 className="text-lg font-bold text-[#092d52]">
