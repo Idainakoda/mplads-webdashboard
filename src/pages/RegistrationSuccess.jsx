@@ -5,6 +5,7 @@ import {
     ArrowLeft,
 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import registrationBg from "../images/registrationbg.jpg";
 
 function RegistrationSuccess() {
     const navigate = useNavigate();
@@ -32,8 +33,17 @@ function RegistrationSuccess() {
     });
 
     return (
-        <div className="min-h-screen bg-[#f4f8fc] flex items-center justify-center px-4 py-8">
-            <div className="w-full max-w-4xl bg-white border border-slate-200 rounded-3xl shadow-xl overflow-hidden">
+        <div className="min-h-screen relative flex items-center justify-center px-4 py-8 sm:py-10 overflow-hidden">
+            <div
+                className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: `url(${registrationBg})`,
+                }}
+            />
+
+            <div className="fixed inset-0 bg-white/75 backdrop-blur-[2px]" />
+
+            <div className="relative z-10 w-full max-w-4xl bg-white/95 border border-slate-200 rounded-3xl shadow-2xl overflow-hidden">
                 <div className="px-5 sm:px-10 py-8 sm:py-10 text-center">
                     <div className="w-20 h-20 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
                         <Check size={38} strokeWidth={2.4} />
@@ -73,7 +83,7 @@ function RegistrationSuccess() {
                     </div>
 
                     <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="rounded-2xl bg-blue-50 border border-blue-100 p-5 flex items-center gap-4 text-left">
+                        <div className="rounded-2xl bg-blue-50/90 border border-blue-100 p-5 flex items-center gap-4 text-left">
                             <div className="w-11 h-11 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
                                 <FileText size={21} />
                             </div>
@@ -89,7 +99,7 @@ function RegistrationSuccess() {
                             </div>
                         </div>
 
-                        <div className="rounded-2xl bg-amber-50 border border-amber-100 p-5 flex items-center gap-4 text-left">
+                        <div className="rounded-2xl bg-amber-50/90 border border-amber-100 p-5 flex items-center gap-4 text-left">
                             <div className="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
                                 <Clock3 size={21} />
                             </div>
@@ -106,7 +116,7 @@ function RegistrationSuccess() {
                         </div>
                     </div>
 
-                    <div className="mt-7 rounded-2xl bg-slate-50 border border-slate-200 px-5 py-4">
+                    <div className="mt-7 rounded-2xl bg-slate-50/95 border border-slate-200 px-5 py-4">
                         <p className="text-sm text-slate-500">
                             You will receive an email notification at
                         </p>
@@ -122,7 +132,7 @@ function RegistrationSuccess() {
                                 state: { role },
                             })
                         }
-                        className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0b4f8a] text-white text-sm font-semibold hover:bg-[#093d6b] transition"
+                        className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0b4f8a] text-white text-sm font-semibold hover:bg-[#083d6b] transition shadow-sm"
                     >
                         <ArrowLeft size={18} />
                         Back to Login
@@ -133,4 +143,4 @@ function RegistrationSuccess() {
     );
 }
 
-export default RegistrationSuccess;    
+export default RegistrationSuccess;

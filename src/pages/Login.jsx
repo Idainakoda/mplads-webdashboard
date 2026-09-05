@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Lock, Mail, ArrowLeft, ShieldCheck } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import emblemImage from "../images/emblem.png";
+import registrationBg from "../images/registrationbg.jpg";
 
 const roleNames = {
     ministry: "Central Authority",
@@ -41,11 +42,21 @@ function Login() {
     };
 
     return (
-        <div className="min-h-screen bg-[#f4f8fc] flex items-center justify-center px-6 py-10">
-            <div className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+        <div className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 py-8 sm:py-10 overflow-hidden">
+            <div
+                className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: `url(${registrationBg})`,
+                }}
+            />
+
+            <div className="fixed inset-0 bg-white/75 backdrop-blur-[2px]" />
+
+            <div className="relative z-10 w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
                 <div className="grid md:grid-cols-2">
                     <div className="hidden md:flex relative bg-[#092d52] text-white p-12 flex-col justify-between overflow-hidden">
                         <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-blue-400/10" />
+
                         <div className="absolute -bottom-32 -left-24 w-80 h-80 rounded-full bg-blue-400/10" />
 
                         <div className="relative z-10">
@@ -60,6 +71,7 @@ function Login() {
                                     <p className="font-semibold text-lg">
                                         Government of India
                                     </p>
+
                                     <p className="text-sm text-white/70">
                                         Prototype
                                     </p>
@@ -195,9 +207,11 @@ function Login() {
 
                         <div className="relative flex items-center gap-4 my-7">
                             <div className="flex-1 h-px bg-slate-200" />
+
                             <span className="text-xs text-slate-400 uppercase tracking-wider">
                                 New User
                             </span>
+
                             <div className="flex-1 h-px bg-slate-200" />
                         </div>
 
