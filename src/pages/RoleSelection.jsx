@@ -119,8 +119,7 @@ function RoleSelection() {
                             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-white leading-[0.95]">
                                 Welcome to
                                 <br />
-                                <span className="text-white">MPLADS</span>{" "}
-                                <span className="text-blue-400">Monitor</span>
+                                Paar<span className="text-blue-400">darshi</span>
                             </h1>
 
                             <p className="mt-7 text-xl md:text-2xl text-white/90">
@@ -245,7 +244,7 @@ function RoleSelection() {
                 <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-5">
                     <div className="flex items-center gap-8">
                         <p className="font-bold text-[#092d52]">
-                            MPLADS <span className="text-blue-600">Monitor</span>
+                            Paar<span className="text-blue-600">darshi</span>
                         </p>
 
                         <div className="hidden md:block text-sm text-slate-500">

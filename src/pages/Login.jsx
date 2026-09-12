@@ -81,7 +81,7 @@ function Login() {
 
                         <div className="relative z-10">
                             <p className="text-sm tracking-[0.3em] uppercase text-blue-300 mb-4">
-                                MPLADS Monitor
+                                Paar<span className="text-blue-600">darshi</span>
                             </p>
 
                             <h1 className="text-4xl lg:text-5xl font-serif font-semibold leading-tight">

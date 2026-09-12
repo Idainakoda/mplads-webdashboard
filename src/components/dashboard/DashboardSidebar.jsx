@@ -101,10 +101,7 @@ function DashboardSidebar({
                     <div className="flex items-center justify-between">
                         <div>
                             <h1 className="text-xl font-bold">
-                                MPLADS{" "}
-                                <span className="text-blue-300">
-                                    Monitor
-                                </span>
+                                Paar<span className="text-blue-600">darshi</span>
                             </h1>
 
                             <p className="text-xs text-white/50 mt-1">

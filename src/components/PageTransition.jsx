@@ -31,7 +31,7 @@ function PageTransition() {
                 <div className="w-10 h-10 rounded-full border-2 border-slate-200 border-t-[#0b4f8a] animate-spin" />
 
                 <p className="mt-4 text-xs font-medium tracking-[0.2em] uppercase text-slate-400">
-                    MPLADS Monitor
+                    Paar<span className="text-blue-600">darshi</span>
                 </p>
             </div>
         </div>

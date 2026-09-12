@@ -123,8 +123,8 @@ function Registration() {
                     </div>
 
                     <p className="text-sm text-white/60 mt-3">
-                        Register your official account to access the MPLADS
-                        Monitor platform.
+                        Register your official account to access the 
+                        Paardarshi platform.
                     </p>
                 </div>
 
